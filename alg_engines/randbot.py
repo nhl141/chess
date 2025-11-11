@@ -28,22 +28,20 @@ def computerMove(board):
     # Move
     print("The computer has moved")
 
-def main(): 
-    print("Welcome to randbot, a chess bot that makes random moves!")
-    print("You will play as white. The program will end when a position has reached checkmate.")
-    print(" You can also exit the program by typing 'resign'")
-    print("You must enter your chess moves in standard algebraic notation")
-    print("Have fun!")
-    print("="*150)
+print("Welcome to randbot, a chess bot that makes random moves!")
+print("You will play as white. The program will end when a position has reached checkmate.")
+print(" You can also exit the program by typing 'resign'")
+print("You must enter your chess moves in standard algebraic notation")
+print("Have fun!")
+print("="*150)
 
-    board = chess.Board()
+board = chess.Board()
+print(board)
+while True:
+    playerMove(board)
+    computerMove(board)
     print(board)
-    while True:
-        playerMove(board)
-        computerMove(board)
-        print(board)
-        if board.is_checkmate():
-            print("Checkmate!")
-            exit()
+    if board.is_checkmate():
+        print("Checkmate!")
+        exit()
 
-main()
